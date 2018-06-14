@@ -1,6 +1,7 @@
 package com.example.testvocacional.TestCompleto;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -41,11 +42,12 @@ public class completoActivity extends AppCompatActivity implements View.OnClickL
         btn9 = (Button) findViewById(R.id.btn_9);
         evaluar = (Button) findViewById(R.id.btn_evaluar);
         salir = findViewById(R.id.btn_salir);
-        bundle = getIntent().getExtras();
-        if (bundle != null) {
+
+        SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+        ID = sharedPreferences.getString(Constantes.PREFERENCIAS_RES_COMP,null);
+        if (ID != null) {
             conn = new ConexionSQLite(getApplicationContext());
             SQLiteDatabase db = conn.getReadableDatabase();
-            ID = bundle.getString("id");
             String[] param = {ID};
             String[] campos = {Constantes.CAMPO_R1, Constantes.CAMPO_R2, Constantes.CAMPO_R3, Constantes.CAMPO_R4, Constantes.CAMPO_R5, Constantes.CAMPO_R6, Constantes.CAMPO_R7, Constantes.CAMPO_R8, Constantes.CAMPO_R9};
 
@@ -126,47 +128,40 @@ public class completoActivity extends AppCompatActivity implements View.OnClickL
 
             case R.id.btn_2:
                 i = new Intent(this, complet_2.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
 
             case R.id.btn_3:
                 i = new Intent(this, complet_3.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
 
             case R.id.btn_4:
                 i = new Intent(this, complet_4.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
 
             case R.id.btn_5:
                 i = new Intent(this, complet_5.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
             case R.id.btn_6:
                 i = new Intent(this, complet_6.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
             case R.id.btn_7:
                 i = new Intent(this, complet_7.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
             case R.id.btn_8:
                 i = new Intent(this, complet_8.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
             case R.id.btn_9:
                 i = new Intent(this, complet_9.class);
-                i.putExtra("id", ID);
                 startActivity(i);
                 break;
+
             case R.id.btn_evaluar:
                 SQLiteDatabase db = conn.getReadableDatabase();
                 int max = 0;
@@ -283,6 +278,12 @@ public class completoActivity extends AppCompatActivity implements View.OnClickL
                 if (mayor == res15) {
                     Toast.makeText(getApplicationContext(), "C15 - Turismo", Toast.LENGTH_LONG).show();
                 }
+                SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove(Constantes.PREFERENCIAS_RES_COMP);
+                editor.commit();
+                i = new Intent(this,inicioActivity.class);
+                startActivity(i);
                 break;
 
         }

@@ -2,6 +2,7 @@ package com.example.testvocacional.TestBasico;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -19,16 +20,14 @@ public class basic_2 extends AppCompatActivity implements View.OnClickListener {
     CheckBox rb;
     Button btn;
     private String ID;
-    private Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_2);
         btn = (Button) findViewById(R.id.Enviar);
         btn.setOnClickListener(this);
-        bundle = getIntent().getExtras();
-        if(bundle != null){
-        ID = bundle.getString("id");}
+        SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+        ID = sharedPreferences.getString(Constantes.PREFERENCIAS_RES_BASICO,null);
     }
 
     @Override
@@ -150,7 +149,6 @@ public class basic_2 extends AppCompatActivity implements View.OnClickListener {
 
                     db.update(Constantes.TABLA_RES_BAS_NOMBRE,values,Constantes.CAMPO_ID +"=?",parametros);
                     Intent intent = new Intent(this, basicoActivity.class);
-                    intent.putExtra("id", ID);
                     db.close();
                     startActivity(intent);
                 }

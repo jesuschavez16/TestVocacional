@@ -2,6 +2,7 @@ package com.example.testvocacional.TestBasico;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -148,8 +149,12 @@ public class basic_1 extends AppCompatActivity implements View.OnClickListener {
                     Long IDResultado = db.insert(Constantes.TABLA_RES_BAS_NOMBRE, Constantes.CAMPO_ID, values);
                     String ID = String.valueOf(IDResultado);
                     Intent intent = new Intent(this, basicoActivity.class);
-                    intent.putExtra("id", ID);
                     db.close();
+                    SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(Constantes.PREFERENCIAS_RES_BASICO,ID);
+                    editor.commit();
+
                     startActivity(intent);
                 }
 

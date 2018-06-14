@@ -4,6 +4,9 @@ public class Constantes {
     public static final String DATABASE_NOMBRE = "bd_test";
     public static final String TABLA_RES_BAS_NOMBRE = "resultadobasico";
     public static final String TABLA_RES_COMP_NOMBRE = "resultadocompleto";
+    public static final String PREFERENCIAS_RES = "PrefTest";
+    public static final String PREFERENCIAS_RES_COMP = "PCompleto";
+    public static final String PREFERENCIAS_RES_BASICO = "PBasico";
 
     public static final String CAMPO_ID = "id";
     public static final String CAMPO_ESTADO = "estado";//Estados: 1=Completo, 2=incompleto, 3=eliminado

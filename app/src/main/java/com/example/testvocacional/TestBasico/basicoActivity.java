@@ -1,6 +1,7 @@
 package com.example.testvocacional.TestBasico;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -32,12 +33,12 @@ public class basicoActivity extends AppCompatActivity implements View.OnClickLis
         cua = findViewById(R.id.btn_4);
         evaluar = findViewById(R.id.btn_evaluar);
         salir = findViewById(R.id.btn_salir);
-        bundle = getIntent().getExtras();
 
-        if(bundle != null){
+        SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+        ID = sharedPreferences.getString(Constantes.PREFERENCIAS_RES_BASICO,null);
+        if(ID != null){
             conn = new ConexionSQLite(getApplicationContext());
             SQLiteDatabase db = conn.getReadableDatabase();
-            ID = bundle.getString("id");
             String[] param = {ID};
             String[] campos = {Constantes.CAMPO_R1, Constantes.CAMPO_R2,Constantes.CAMPO_R3,Constantes.CAMPO_R4};
 
@@ -82,26 +83,22 @@ public class basicoActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btn_2:
                 i = new Intent(this,basic_2.class);
-                i.putExtra("id",ID);
                 startActivity(i);
                 break;
 
             case R.id.btn_3:
                 i = new Intent(this,basic_3.class);
-                i.putExtra("id",ID);
                 startActivity(i);
                 break;
 
             case R.id.btn_4:
                 i = new Intent(this,basic_4.class);
-                i.putExtra("id",ID);
                 startActivity(i);
                 break;
 
             case R.id.btn_evaluar:
                 SQLiteDatabase db = conn.getReadableDatabase();
                 int max = 0;
-                ID = bundle.getString("id");
                 String[] param = {ID};
                 String[] campos = {Constantes.CAMPO_RES1,Constantes.CAMPO_RES2,Constantes.CAMPO_RES3,Constantes.CAMPO_RES4,Constantes.CAMPO_RES5};
                 Cursor cursor = db.query(Constantes.TABLA_RES_BAS_NOMBRE,campos,Constantes.CAMPO_ID +"=?",param,null,null,null);
@@ -145,7 +142,17 @@ public class basicoActivity extends AppCompatActivity implements View.OnClickLis
                         }
                     }
                 }
+
                 db.close();
+
+                  //Esto es para eliminar la preferencia
+                SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove(Constantes.PREFERENCIAS_RES_BASICO);
+                editor.commit();
+
+                i = new Intent(this,inicioActivity.class);
+                startActivity(i);
                 break;
         }
 

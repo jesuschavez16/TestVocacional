@@ -2,6 +2,7 @@ package com.example.testvocacional.TestCompleto;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -400,8 +401,11 @@ public class complet_1 extends AppCompatActivity implements View.OnClickListener
                 Long IDResult = db.insert(Constantes.TABLA_RES_COMP_NOMBRE, Constantes.CAMPO_ID, values);
                 String ID = String.valueOf(IDResult);
                 Intent intent = new Intent(this, completoActivity.class);
-                intent.putExtra("id", ID);
                 db.close();
+                SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(Constantes.PREFERENCIAS_RES_COMP,ID);
+                editor.commit();
                 startActivity(intent);
                 break;
         }
