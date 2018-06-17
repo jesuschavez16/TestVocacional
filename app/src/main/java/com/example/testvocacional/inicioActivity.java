@@ -31,6 +31,9 @@ public class inicioActivity extends AppCompatActivity {
                 case R.id.navigation_config:
                     Toast.makeText(cnt, "config", Toast.LENGTH_SHORT).show();
                     return true;
+                case R.id.navigation_test:
+                    Toast.makeText(cnt, "test", Toast.LENGTH_SHORT).show();
+                    return true;
             }
             return false;
         }

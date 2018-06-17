@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +17,7 @@ public class idiomaActivity extends AppCompatActivity implements View.OnClickLis
     private Configuration config = new Configuration();
     Context cnt;
     //SharedPreferences sp = getSharedPreferences("Preferencias",this.MODE_PRIVATE);
-    Button esp, que;
+    CardView esp, que;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +27,8 @@ public class idiomaActivity extends AppCompatActivity implements View.OnClickLis
        //     Intent intent = new Intent( this, inicioActivity.class );
         //    startActivity( intent );
         //}
-        esp=(Button)findViewById(R.id.btn_espanol);
-        que=(Button)findViewById(R.id.btn_quechua);
+        esp=(CardView)findViewById(R.id.btn_espanol);
+        que=(CardView)findViewById(R.id.btn_quechua);
         esp.setOnClickListener(this);
         que.setOnClickListener(this);
         cnt = idiomaActivity.this;
