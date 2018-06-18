@@ -15,6 +15,7 @@ public class inicioActivity extends AppCompatActivity {
     Context cnt;
     FragmentManager fragmentManager = getSupportFragmentManager();
     homeFrag hf;
+    resultadosFragment rf;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -23,10 +24,12 @@ public class inicioActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_inicio:
                     hf = new homeFrag();
-                    fragmentManager.beginTransaction().add(R.id.contenedor, hf).commit();
+                    fragmentManager.beginTransaction().replace(R.id.contenedor, hf).commit();
                     return true;
                 case R.id.navigation_result:
+                    rf= new resultadosFragment();
                     Toast.makeText(cnt, "result", Toast.LENGTH_SHORT).show();
+                    fragmentManager.beginTransaction().replace(R.id.contenedor, rf).commit();
                     return true;
                 case R.id.navigation_config:
                     Toast.makeText(cnt, "config", Toast.LENGTH_SHORT).show();

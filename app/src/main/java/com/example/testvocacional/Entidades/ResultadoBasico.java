@@ -1,20 +1,20 @@
 package com.example.testvocacional.Entidades;
 
 public class ResultadoBasico {
-    private Integer id;
-    private Integer estado;
-    private Integer numero;
-    private String nombre;
-    private Integer resultado1;
-    private Integer resultado2;
-    private Integer resultado3;
-    private Integer resultado4;
-    private Integer resultado5;
-    private Integer r1;
-    private Integer r2;
-    private Integer r3;
-    private Integer r4;
-    private Integer r5;
+    private Integer id=0;
+    private Integer estado=0;
+    private Integer numero=0;
+    private String nombre=null;
+    private Integer resultado1=0;
+    private Integer resultado2=0;
+    private Integer resultado3=0;
+    private Integer resultado4=0;
+    private Integer resultado5=0;
+    private Integer r1=0;
+    private Integer r2=0;
+    private Integer r3=0;
+    private Integer r4=0;
+    private Integer r5=0;
 
     public ResultadoBasico() {
     }
