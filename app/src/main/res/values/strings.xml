@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test de Orientacion Vocacional</string>
+    <string name="app_name">Easy-Dev</string>
     <string name="InstruccionBasico1">1) Lee atentamente cada una de las actividades.</string>
     <string name="InstruccionBasico2">2) Marca las acciones que te interesaria hacer.</string>
     <string name="Instruccion3"> En general no existen respuestas correctas o incorrectas; lo importante es que contestes con sinceridad y confianza para que puedas conocer mejor tus intereses vocacionales.</string>
@@ -63,6 +63,7 @@
         <item>Quechua</item>
 
     </string-array>
+
     <string name="title_activity_menu">Test Vocacional</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

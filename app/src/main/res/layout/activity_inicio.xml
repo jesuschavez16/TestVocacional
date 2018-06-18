@@ -14,6 +14,17 @@
         android:layout_marginBottom="55dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarid"
+            app:popupTheme="@style/AlertDialog.AppCompat.Light"
+            app:layout_collapseMode="pin"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:title="@string/app_name"/>
+
+
     </LinearLayout>
 
 
