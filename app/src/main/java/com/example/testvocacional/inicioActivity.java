@@ -28,14 +28,9 @@ public class inicioActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_result:
                     rf= new resultadosFragment();
-                    Toast.makeText(cnt, "result", Toast.LENGTH_SHORT).show();
                     fragmentManager.beginTransaction().replace(R.id.contenedor, rf).commit();
                     return true;
                 case R.id.navigation_config:
-                    Toast.makeText(cnt, "config", Toast.LENGTH_SHORT).show();
-                    return true;
-                case R.id.navigation_test:
-                    Toast.makeText(cnt, "test", Toast.LENGTH_SHORT).show();
                     return true;
             }
             return false;

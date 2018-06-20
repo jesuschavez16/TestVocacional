@@ -1,11 +1,13 @@
 package com.example.testvocacional.TestCompleto;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,7 +22,8 @@ import com.example.testvocacional.Util.Constantes;
 import com.example.testvocacional.inicioActivity;
 
 public class completoActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, evaluar,salir;
+    private CardView btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, evaluar;
+    private Button salir;
     private Integer r1 = 0, r2 = 0, r3 = 0, r4 = 0, r5 = 0, r6 = 0, r7 = 0, r8 = 0, r9 = 0;
     private Integer res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11, res12, res13, res14, res15;
     private String ID;
@@ -31,16 +34,16 @@ public class completoActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completo);
-        btn1 = (Button) findViewById(R.id.btn_1);
-        btn2 = (Button) findViewById(R.id.btn_2);
-        btn3 = (Button) findViewById(R.id.btn_3);
-        btn4 = (Button) findViewById(R.id.btn_4);
-        btn5 = (Button) findViewById(R.id.btn_5);
-        btn6 = (Button) findViewById(R.id.btn_6);
-        btn7 = (Button) findViewById(R.id.btn_7);
-        btn8 = (Button) findViewById(R.id.btn_8);
-        btn9 = (Button) findViewById(R.id.btn_9);
-        evaluar = (Button) findViewById(R.id.btn_evaluar);
+        btn1 =  findViewById(R.id.btn_1);
+        btn2 =  findViewById(R.id.btn_2);
+        btn3 =  findViewById(R.id.btn_3);
+        btn4 =  findViewById(R.id.btn_4);
+        btn5 =  findViewById(R.id.btn_5);
+        btn6 =  findViewById(R.id.btn_6);
+        btn7 =  findViewById(R.id.btn_7);
+        btn8 =  findViewById(R.id.btn_8);
+        btn9 =  findViewById(R.id.btn_9);
+        evaluar =  findViewById(R.id.btn_evaluar);
         salir = findViewById(R.id.btn_salir);
 
         SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
@@ -163,10 +166,17 @@ public class completoActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
             case R.id.btn_evaluar:
-                SQLiteDatabase db = conn.getReadableDatabase();
-                int max = 0;
-                ID = bundle.getString("id");
+                SQLiteDatabase db;
                 String[] parametros = {ID};
+
+                db = conn.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put (Constantes.CAMPO_ESTADO, 1);
+                db.update(Constantes.TABLA_RES_COMP_NOMBRE,values,Constantes.CAMPO_ID +"=?",parametros);
+
+
+                db = conn.getReadableDatabase();
+                int max = 0;
                 String[] campos = {Constantes.CAMPO_RES1, Constantes.CAMPO_RES2, Constantes.CAMPO_RES3, Constantes.CAMPO_RES4, Constantes.CAMPO_RES5, Constantes.CAMPO_RES6, Constantes.CAMPO_RES7, Constantes.CAMPO_RES8, Constantes.CAMPO_RES9, Constantes.CAMPO_RES10, Constantes.CAMPO_RES11, Constantes.CAMPO_RES12, Constantes.CAMPO_RES13, Constantes.CAMPO_RES14, Constantes.CAMPO_RES15};
                 Cursor cursor = db.query(Constantes.TABLA_RES_COMP_NOMBRE, campos, Constantes.CAMPO_ID + "=?", parametros, null, null, null);
                 cursor.moveToFirst();

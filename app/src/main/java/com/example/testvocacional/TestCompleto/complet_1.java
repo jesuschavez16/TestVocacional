@@ -365,7 +365,7 @@ public class complet_1 extends AppCompatActivity implements View.OnClickListener
 
                 EditText nomn = (EditText) findViewById(R.id.etNombre);
                 String nom = nomn.getText().toString();
-                if (nom == null) {
+                if (nom == "") {
                     nom = "Unknown";
                 }
                 ConexionSQLite conn = new ConexionSQLite(this);

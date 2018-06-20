@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Easy-Dev</string>
+    <string name="app_name">Test Vocacional</string>
     <string name="InstruccionBasico1">1) Lee atentamente cada una de las actividades.</string>
     <string name="InstruccionBasico2">2) Marca las acciones que te interesaria hacer.</string>
     <string name="Instruccion3"> En general no existen respuestas correctas o incorrectas; lo importante es que contestes con sinceridad y confianza para que puedas conocer mejor tus intereses vocacionales.</string>
@@ -270,7 +270,7 @@
     <string name="tc_180">Idear, preparar y dirigir programas de animación cultural.	</string>
     <string name="comenzar_test">Comenzar Test</string>
     <string name="InstruccionCompleto1">1) Lee atentamente cada una de las actividades.</string>
-    <string name="InstruccionCompleto2">2) Indicar si no conoce la actividad mencionada, o si dicha actividad te desagrada, o si dicha actividad te e indiferente, o si te agradaría realizarla.</string>
+    <string name="InstruccionCompleto2">2) Indicar una opcion segun su criterio.</string>
     <string name="test_bas">Test Basico</string>
     <string name="test_compl">Test Completo</string>
     <string name="resultados">Resultados</string>

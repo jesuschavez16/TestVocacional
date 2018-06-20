@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -88,11 +89,18 @@ public class resultadosFragment extends Fragment {
         consultarResBasico();
         consultarResCompleto();
 
-        ArrayAdapter adapterBasico = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,listaInformacionBas);
-        ArrayAdapter adapterCompleto = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,listaInformacionCom);
+        ArrayAdapter adapterBasico = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,listaInformacionBas);
+        ArrayAdapter adapterCompleto = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,listaInformacionCom);
 
         listViewBasic.setAdapter(adapterBasico);
         listViewComple.setAdapter(adapterCompleto);
+
+        listViewBasic.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                
+            }
+        });
 
 
         return v;
@@ -111,8 +119,9 @@ public class resultadosFragment extends Fragment {
             listaResCompleto.add(resultadoCompleto);
         }
         listaInformacionCom = new ArrayList<String>();
-        for (int i=0; i<listaResBasico.size();i++){
-            listaInformacionCom.add(listaResCompleto.get(i).getNombre()+ " - Completo");
+        for (int i=0; i<listaResCompleto.size();i++){
+            String com = getString(R.string.test_compl);
+            listaInformacionCom.add(listaResCompleto.get(i).getNombre()+ " - " + com);
         }
     }
 
@@ -130,7 +139,8 @@ public class resultadosFragment extends Fragment {
         }
         listaInformacionBas = new ArrayList<String>();
         for (int i=0; i<listaResBasico.size();i++){
-            listaInformacionBas.add(listaResBasico.get(i).getNombre()+ " - Basico");
+            String bas = getString(R.string.test_bas);
+            listaInformacionBas.add(listaResBasico.get(i).getNombre()+ " - " + bas);
         }
 
     }

@@ -33,7 +33,8 @@
         <activity android:name=".TestCompleto.complet_6" />
         <activity android:name=".TestCompleto.complet_7" />
         <activity android:name=".TestCompleto.complet_8" />
-        <activity android:name=".TestCompleto.complet_9"></activity>
+        <activity android:name=".TestCompleto.complet_9" />
+        <activity android:name=".TestBasico.basic_resultado"></activity>
     </application>
 
 </manifest>

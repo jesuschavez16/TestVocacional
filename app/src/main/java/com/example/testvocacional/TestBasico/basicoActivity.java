@@ -1,11 +1,13 @@
 package com.example.testvocacional.TestBasico;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,7 +19,8 @@ import com.example.testvocacional.inicioActivity;
 
 public class basicoActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button uno,dos,tre,cua, evaluar, salir;
+    private CardView uno,dos,tre,cua, evaluar;
+    private Button salir;
     private Integer r1 = 0,r2 = 0,r3 = 0,r4 = 0;
     private Integer res1,res2,res3,res4,res5;
     private String ID;
@@ -97,53 +100,6 @@ public class basicoActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.btn_evaluar:
-                SQLiteDatabase db = conn.getReadableDatabase();
-                int max = 0;
-                String[] param = {ID};
-                String[] campos = {Constantes.CAMPO_RES1,Constantes.CAMPO_RES2,Constantes.CAMPO_RES3,Constantes.CAMPO_RES4,Constantes.CAMPO_RES5};
-                Cursor cursor = db.query(Constantes.TABLA_RES_BAS_NOMBRE,campos,Constantes.CAMPO_ID +"=?",param,null,null,null);
-                cursor.moveToFirst();
-                res1=cursor.getInt(0);
-                res2=cursor.getInt(1);
-                res3=cursor.getInt(2);
-                res4=cursor.getInt(3);
-                res5=cursor.getInt(4);
-
-                if (max < res1) {
-                    max = res1;
-                }
-                if (max < res2) {
-                    max = res2;
-                }
-                if (max < res3) {
-                    max = res3;
-                }
-                if (max < res4) {
-                    max = res4;
-                }
-                if (max < res5) {
-                    max = res5;
-                }
-
-                if (max == res1) {
-                    Toast.makeText(getApplicationContext(), "Artes y creatividad", Toast.LENGTH_LONG).show();
-                } else {
-                    if (max == res2) {
-                        Toast.makeText(getApplicationContext(), "Ciencias Sociales", Toast.LENGTH_LONG).show();
-                    } else {
-                        if (max == res3) {
-                            Toast.makeText(getApplicationContext(), "Economica, Administrativa y Financiera", Toast.LENGTH_LONG).show();
-                        } else {
-                            if (max == res4) {
-                                Toast.makeText(getApplicationContext(), "Ciencia y Tecnologia", Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Ciencias Ecologicas y ciencias de la salud", Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    }
-                }
-
-                db.close();
 
                   //Esto es para eliminar la preferencia
                 SharedPreferences sharedPreferences = getSharedPreferences(Constantes.PREFERENCIAS_RES,0);
@@ -151,7 +107,16 @@ public class basicoActivity extends AppCompatActivity implements View.OnClickLis
                 editor.remove(Constantes.PREFERENCIAS_RES_BASICO);
                 editor.commit();
 
-                i = new Intent(this,inicioActivity.class);
+                ConexionSQLite conn = new ConexionSQLite(this);
+                conn = new ConexionSQLite(getApplicationContext());
+                String[] parametros = {ID};
+                SQLiteDatabase db = conn.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put (Constantes.CAMPO_ESTADO, 1);
+                db.update(Constantes.TABLA_RES_BAS_NOMBRE,values,Constantes.CAMPO_ID +"=?",parametros);
+
+                i = new Intent(this,basic_resultado.class);
+                i.putExtra("ID",ID);
                 startActivity(i);
                 break;
         }
