@@ -274,5 +274,6 @@
     <string name="test_bas">Test Basico</string>
     <string name="test_compl">Test Completo</string>
     <string name="resultados">Resultados</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

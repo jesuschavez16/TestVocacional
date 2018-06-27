@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "135168453840",
+    "firebase_url": "https://easy-dev-e3a03.firebaseio.com",
+    "project_id": "easy-dev-e3a03",
+    "storage_bucket": "easy-dev-e3a03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135168453840:android:6468a2609b64bea5",
+        "android_client_info": {
+          "package_name": "com.example.testvocacional"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135168453840-6ofp2m1j91bkoj10jg2i3oclnjajt3mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9XGaaAUtolNbddoRSuZ22fO9VVXxC7PI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

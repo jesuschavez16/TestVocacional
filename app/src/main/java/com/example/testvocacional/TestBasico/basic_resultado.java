@@ -1,20 +1,25 @@
 package com.example.testvocacional.TestBasico;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.testvocacional.MapsActivity;
 import com.example.testvocacional.R;
 import com.example.testvocacional.Util.ConexionSQLite;
 import com.example.testvocacional.Util.Constantes;
 
 import java.util.ArrayList;
 
-public class basic_resultado extends AppCompatActivity {
+public class basic_resultado extends AppCompatActivity implements View.OnClickListener {
     TextView area, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12;
+    ImageView m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12 ;
     ArrayList area1 = new ArrayList<String>(13);
     ArrayList area2 = new ArrayList<String>(13);
     ArrayList area3 = new ArrayList<String>(13);
@@ -41,6 +46,36 @@ public class basic_resultado extends AppCompatActivity {
         c10 = findViewById(R.id.tvC10);
         c11 = findViewById(R.id.tvC11);
         c12 = findViewById(R.id.tvC12);
+
+        //imagen view
+        m1 = findViewById(R.id.m1);
+        m2 = findViewById(R.id.m2);
+        m3 = findViewById(R.id.m3);
+        m4 = findViewById(R.id.m4);
+        m5 = findViewById(R.id.m5);
+        m6 = findViewById(R.id.m6);
+        m7 = findViewById(R.id.m7);
+        m8 = findViewById(R.id.m8);
+        m9 = findViewById(R.id.m9);
+        m10 = findViewById(R.id.m10);
+        m11 = findViewById(R.id.m11);
+        m12 = findViewById(R.id.m12);
+
+        m1.setOnClickListener( this );
+        m2.setOnClickListener( this );
+        m3.setOnClickListener( this );
+        m4.setOnClickListener( this );
+        m5.setOnClickListener( this );
+        m6.setOnClickListener( this );
+        m7.setOnClickListener( this );
+        m8.setOnClickListener( this );
+        m9.setOnClickListener( this );
+        m10.setOnClickListener( this );
+        m11.setOnClickListener( this );
+        m12.setOnClickListener( this );
+
+
+
         Bundle bundle = this.getIntent().getExtras();
          if (bundle!=null){
              ID = bundle.getString("ID");
@@ -215,5 +250,59 @@ public class basic_resultado extends AppCompatActivity {
         area1.add(10,"Fotografia Digital");
         area1.add(11,"Gestion Grafica");
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.m1 :
+                Intent intent = new Intent(  this, MapsActivity.class );
+                startActivity( intent );
+                break;
+            case R.id.m2:
+                Intent intent_2 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_2 );
+                break;
+            case R.id.m3:
+                Intent intent_3 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_3 );
+                break;
+            case R.id.m4:
+                Intent intent_4 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_4 );
+                break;
+            case R.id.m5:
+                Intent intent_5 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_5 );
+                break;
+            case R.id.m6:
+                Intent intent_6 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_6 );
+                break;
+            case R.id.m7:
+                Intent intent_7 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_7 );
+                break;
+            case R.id.m8:
+                Intent intent_8 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_8 );
+                break;
+            case R.id.m9:
+                Intent intent_9 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_9 );
+                break;
+            case R.id.m10:
+                Intent intent_10 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_10 );
+                break;
+            case R.id.m11:
+                Intent intent_11 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_11 );
+                break;
+            case R.id.m12:
+                Intent intent_12 = new Intent(  this, MapsActivity.class );
+                startActivity( intent_12 );
+                break;
+        }
     }
 }

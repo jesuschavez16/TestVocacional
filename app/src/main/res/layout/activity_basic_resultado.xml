@@ -7,21 +7,22 @@
     android:orientation="vertical"
     tools:context=".TestBasico.basic_resultado">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@color/primary_dark"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="10dp">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Resutlados Test Vocacional"
             android:gravity="center"
-            android:text="GoogleMap.xml" />
-
-    </android.support.design.widget.AppBarLayout>
+            android:textSize="17dp"
+            android:textColor="@color/cardview_light_background"
+            android:typeface="sans"
+            android:background="@color/primary_dark"
+            />
+    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -76,142 +77,363 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal">
-
+                        android:layout_height="wrap_content">
                         <TextView
                             android:id="@+id/tvC1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="c1" />
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
 
-                        <TextView
-                            android:id="@+id/tvC2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="c2" />
-                    </LinearLayout>
+                        <ImageView
+                            android:id="@+id/m1"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/tvC3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="c3" />
 
-                        <TextView
-                            android:id="@+id/tvC4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="c4" />
-                    </LinearLayout>
+                    </android.support.v7.widget.CardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvC5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="c3" />
-
-                        <TextView
-                            android:id="@+id/tvC6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="c4" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvC7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="" />
-
-                        <TextView
-                            android:id="@+id/tvC8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="10dp"
+                    android:layout_margin="15dp"
                     android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvC9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                         />
-
-                    <TextView
-                        android:id="@+id/tvC10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                       />
-                </LinearLayout>
-                    <LinearLayout
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="20dp"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
 
+                        <ImageView
+                            android:id="@+id/m2"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m3"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m4"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m5"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m6"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m7"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m8"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m9"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tvC10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m10"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
                         <TextView
                             android:id="@+id/tvC11"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                             />
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
 
+                        <ImageView
+                            android:id="@+id/m11"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
                         <TextView
                             android:id="@+id/tvC12"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            />
-                    </LinearLayout>
+                            android:text="1.- Ingenieria de sistemas"
+                            android:layout_gravity="center"/>
+
+                        <ImageView
+                            android:id="@+id/m12"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@drawable/ciclebackground"
+                            app:srcCompat="@drawable/ic_place"
+                            android:padding="10dp"
+                            android:layout_gravity="right"/>
+
+
+
+                    </android.support.v7.widget.CardView>
+
                 </LinearLayout>
+
+
+
+            </LinearLayout>
             </ScrollView>
 
 
