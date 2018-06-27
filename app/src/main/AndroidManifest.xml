@@ -22,15 +22,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".idiomaActivity">
+
+        </activity>
+        <activity
+            android:name=".inicioActivity"
+            android:label="@string/app_name" />
+
+        <activity android:name=".SliderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".inicioActivity"
-            android:label="@string/app_name" />
+
+
         <activity android:name=".TestBasico.basicoActivity" />
         <activity android:name=".TestBasico.basic_1" />
         <activity android:name=".TestCompleto.completoActivity" />
